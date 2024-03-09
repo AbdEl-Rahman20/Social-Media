@@ -1,20 +1,28 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-body{
+
+body {
+    background-color: #ffeeee;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
 }
-ul{
+
+ul {
     position: relative;
     display: flex;
     gap: 25px;
 }
-ul li{
+
+a {
+    text-decoration: none;
+}
+
+ul li {
     position: relative;
     list-style: none;
     width: 60px;
@@ -27,11 +35,13 @@ ul li{
     box-shadow: 0 10px 25px rgpa(0, 0, 0, 0.1);
     transition: 0.5s;
 }
-ul li:hover{
+
+ul li:hover {
     width: 180px;
     box-shadow: 0 10px 25px rgpa(0, 0, 0, 0);
 }
-ul li::before{
+
+ul li::before {
     content: "";
     position: absolute;
     inset: 0;
@@ -40,10 +50,12 @@ ul li::before{
     opacity: 0;
     transition: 0.5s;
 }
-ul li:hover::before{
+
+ul li:hover::before {
     opacity: 1;
 }
-ul li::after{
+
+ul li::after {
     content: "";
     position: absolute;
     top: 10px;
@@ -56,24 +68,29 @@ ul li::after{
     z-index: -1;
     filter: blur(15px);
 }
-ul li:hover::after{
+
+ul li:hover::after {
     opacity: 0.5;
 }
-ul li i{
+
+ul li i {
     color: #777;
     font-size: 1.75em !important;
     transition: 0.5s;
     transition-delay: 0.25s;
 }
-ul li:hover i{
+
+ul li:hover i {
     transform: scale(0);
     font-size: 1.75em;
     transition-delay: 0.25s;
 }
-ul li span{
+
+ul li span {
     position: absolute;
 }
-ul li .title{
+
+ul li .title {
     color: #fff;
     font-size: 1.1em !important;
     text-transform: uppercase;
@@ -82,7 +99,16 @@ ul li .title{
     transition: 0.5s;
     transition-delay: 0s;
 }
-ul li:hover .title{
+
+ul li:hover .title {
     transform: scale(1);
     transition-delay: 0.25s;
+}
+
+@media screen and (max-width: 767px) {
+    ul {
+        display: block;
+        justify-content: center;
+        align-items: center;
+    }
 }
